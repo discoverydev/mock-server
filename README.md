@@ -10,11 +10,14 @@ Install Docker.
 Download build from public Docker Hub: docker pull discoverydev/mockserver
 
 #Usage
-docker run -d --name mockserver -p <serverPort>:1080 -p <proxyPort>:1090 jamesdbloom/mockserver
-docker run --name mockserver -p <serverPort>:1080 -p <proxyPort>:1090 jamesdbloom/mockserver
+## No Log Output (deamon mode)
+docker run -d --name mockserver -p <serverPort>:1080 -p <proxyPort>:1090 discoverydev/mockserver
+## Log Output
+docker run --name mockserver -p <serverPort>:1080 -p <proxyPort>:1090 discoverydev/mockserver
 
+## Shell Prompt
 DEBUG any issues or change the command line options you can run the container with a shell prompt
-docker run -i -t --name mockserver -p 1080:1080 -p 1090:1090 jamesdbloom/mockserver /bin/bash
+docker run -i -t --name mockserver -p 1080:1080 -p 1090:1090 discoverydev/mockserver /bin/bash
 
 The default command executed when the container runs is:
 
