@@ -1,5 +1,3 @@
-# mock-server
-
 # MockServer
 # Dependencies
 java
