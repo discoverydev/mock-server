@@ -13,10 +13,10 @@ MAINTAINER ADS Discoverydev "adsdiscoveryteam@gmail.com"
 
 # download MockServer
 RUN  \
-  mkdir -p /opt/mockserver && \
-  wget -O /opt/mockserver/mock-0.1-SNAPSHOT.jar "http://192.168.8.31:8081/service/local/artifact/maven/content?r=snapshots&g=com.ads&a=mock&v=LATEST" --content-disposition && \
-  wget -O /opt/mockserver/mockserver-netty-jar-with-dependencies.jar https://oss.sonatype.org/content/repositories/releases/org/mock-server/mockserver-netty/3.10.1/mockserver-netty-3.10.1-jar-with-dependencies.jar && \
-  wget -O /opt/mockserver/run_mockserver.sh https://raw.github.com/jamesdbloom/mockserver/master/docker/run_mockserver.sh && \
+  mkdir -p /opt/mockserver ; \
+  wget -O /opt/mockserver/mock-0.1-SNAPSHOT.jar "http://192.168.8.31:8081/service/local/artifact/maven/content?r=snapshots&g=com.ads&a=mock&v=LATEST" --content-disposition || true ; \
+  wget -O /opt/mockserver/mockserver-netty-jar-with-dependencies.jar https://oss.sonatype.org/content/repositories/releases/org/mock-server/mockserver-netty/3.10.1/mockserver-netty-3.10.1-jar-with-dependencies.jar ; \
+  wget -O /opt/mockserver/run_mockserver.sh https://raw.github.com/jamesdbloom/mockserver/master/docker/run_mockserver.sh ; \
   chmod +x /opt/mockserver/run_mockserver.sh
 
 # set working directory
